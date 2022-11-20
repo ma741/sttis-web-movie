@@ -19,6 +19,11 @@
    <!-- Owl Carousel -->
    <link rel="stylesheet" href="assets/vendor/owl-carousel/owl.carousel.css">
    <link rel="stylesheet" href="assets/vendor/owl-carousel/owl.theme.css">
+   <style type="text/css">
+      .color-form {
+         color: #fff;
+      }
+   </style>
 </head>
 
 
@@ -27,12 +32,13 @@
    <section class="login-main-wrapper">
       <div class="container-fluid pl-0 pr-0">
          <div class="row no-gutters">
-            <div class="col-md-5 p-5 bg-white full-height">
+
+            <div class="col-md-5 p-5 full-height" style="background-color: #393D5E">
                <div class="login-main-left">
                   <div class="text-center mb-5 login-main-left-header pt-4">
 
                      <img src="assets/img/logo_besar.png" class="img-fluid" alt="LOGO" style="width: 50%;">
-                     <h5 class="mt-3 mb-3">Welcome to Vidoe</h5>
+                     <h5 class="mt-3 ">Welcome to Vidoe</h5>
                      <p>It is a long established fact that a reader <br> will be distracted by the readable.</p>
                   </div>
 
@@ -64,11 +70,11 @@
 
                      <div class="form-group">
                         <label>Email</label>
-                        <input type="text" name="email" class="form-control" placeholder="Enter Email">
+                        <input type="text" name="email" class="form-control color-form" placeholder="Enter Email">
                      </div>
                      <div class="form-group">
-                        <label>Password</label> <label class="float-right"><a href="forgot_password.php">Forgot Password ?</a></label>
-                        <input type="password" name="password" class="form-control" placeholder="Password">
+                        <label>Password</label> <label class="float-right"><a href="forgot_password.php" class="text-danger">Forgot Password ?</a></label>
+                        <input type="password" name="password" class="form-control color-form" placeholder="Password">
                      </div>
 
                      <div class="mt-4">
@@ -81,7 +87,7 @@
                   </form>
                   <div class="text-center mt-3">
                      <p class="light-gray">
-                        Don’t have an account? <a href="register.php">Sign Up</a><br>
+                        Don’t have an account? <a href="register.php" class="text-success">Sign Up</a><br>
                      </p>
                   </div>
                </div>

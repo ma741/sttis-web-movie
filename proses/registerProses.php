@@ -18,7 +18,6 @@ require_once "../assets/library/Exception.php";
 require_once "../assets/library/PHPMailer.php";
 require_once "../assets/library/SMTP.php";
 
-$foto = $_POST['foto'];
 $fullname = $_POST['fullname'];
 $username = $_POST['username'];
 $date_of_brith = $_POST['date_of_birth'];
@@ -32,7 +31,7 @@ $date_of_birth = $_POST['date_of_birth'];
 
 $status = "not_active";
 
-$created_date = date('Y-m-d-H:i:s');
+$created_date = date('Y-m-d');
 
 $code = md5($email . date("Y-m-d"));
 
@@ -45,7 +44,7 @@ $query = mysqli_query($conn,"SELECT * FROM users WHERE email='$email'");
 
 if (mysqli_num_rows($query) > 0) {
 
-    echo "<script>alert('Email already registered');</script>";
+    echo "<script>alert('Email already registered'); document.location='../register.php'</script>";
 
 } else {
 
@@ -67,7 +66,7 @@ if (mysqli_num_rows($query) > 0) {
     if ($error === 4) {
         echo "<script>
 				alert('pilih gambar terlebih dahulu!');
-                    document.location='index.php'
+                    document.location='../register.php'
 			  </script>";
 
         return false;
@@ -113,7 +112,7 @@ if (mysqli_num_rows($query) > 0) {
             } else {
                 echo "<script>
                         alert('Ukuran file terlalu besar ,Max 1mb');
-                        document.location='index.php';
+                        document.location='../register.php';
                     </script>";
             }
 

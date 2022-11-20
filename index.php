@@ -1,6 +1,12 @@
 <?php include "header.php"; ?>
+
+    <!-- <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br> -->
+
+
 <div id="content-wrapper">
-  <div class="container-fluid pb-0">
+  <div class="container-fluid mt-5 pb-0">
     <div class="top-mobile-search">
       <div class="row">
         <div class="col-md-12">
@@ -15,6 +21,8 @@
         </div>
       </div>
     </div>
+    
+    
     <div class="top-category section-padding text-center mb-4">
       <!-- btn -->
       <div class="btn btn-primary btn-sm">halo</div>
@@ -36,10 +44,9 @@
               <div class="dropdown-menu dropdown-menu-right">
                 <a class="dropdown-item" href="#"><i class="fas fa-fw fa-star"></i> &nbsp; Top Rated</a>
                 <a class="dropdown-item" href="#"><i class="fas fa-fw fa-signal"></i> &nbsp; Viewed</a>
-                <a class="dropdown-item" href="#"><i class="fas fa-fw fa-times-circle"></i> &nbsp; Close</a>
               </div>
             </div>
-            <h6>Featured Videos</h6>
+            <h6 class="text-white">Featured Videos</h6>
           </div>
         </div>
         <div class="col-xl-3 col-sm-6 mb-3">

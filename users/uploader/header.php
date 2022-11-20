@@ -2,13 +2,13 @@
 include "../../config.php";
 session_start();
 
-if ($_SESSION['berhasil'] == "") {
+if ($_SESSION['id'] == "") {
   header("location:../../login.php?pesan=no_login");
 }
 
-$username = $_SESSION['berhasil'];
+$id = $_SESSION['id'];
 
-$query = mysqli_query($conn,"SELECT * FROM users WHERE username='$username'");
+$query = mysqli_query($conn,"SELECT * FROM users WHERE id='$id'");
 $user = mysqli_fetch_assoc($query);
 
 ?>
@@ -93,7 +93,7 @@ $user = mysqli_fetch_assoc($query);
         <li class="nav-item dropdown no-arrow osahan-right-navbar-user">
           <a class="nav-link dropdown-toggle user-dropdown-link" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <img alt="Avatar" src="../../assets/file/<?= $user['photo']; ?>" />
-            <?php echo $_SESSION['berhasil'];  ?>
+            <?= $user['username'];  ?>
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
             <a class="dropdown-item" href="account.php"><i class="fas fa-fw fa-user-circle"></i> &nbsp; My Account</a>
@@ -153,7 +153,7 @@ $user = mysqli_fetch_assoc($query);
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="content.php">
+          <a class="nav-link" href="analitycs.php">
             <i class="fas fa-fw fa-upload"></i>
             <span>Analitycs</span>
           </a>

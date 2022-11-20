@@ -26,7 +26,7 @@
 
 
   <body id="page-top">
-    <nav class="warna-navbar navbar navbar-expand navbar-dark  static-top osahan-nav sticky-top">
+    <nav class="warna-navbar navbar navbar-expand navbar-dark  static-top osahan-nav  fixed-top">
       &nbsp;&nbsp;
       <button class="btn btn-link btn-sm text-secondary order-1 order-sm-0" id="sidebarToggle">
         <i class="fas fa-bars"></i>
@@ -56,7 +56,7 @@
     <div id="wrapper">
       <!-- Sidebar -->
       <ul class="warna-navbar sidebar  navbar-nav">
-        <li class="nav-item active">
+        <li class="nav-item active mt-5">
           <a class="nav-link" href="index.php">
             <i class="fas fa-fw fa-home"></i>
             <span>Home</span>
@@ -89,3 +89,5 @@
 
 
       </ul>
+
+

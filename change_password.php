@@ -97,8 +97,14 @@
                         
                         <form action="proses/change_proses.php" method="post" enctype="multipart/form-data">
                             
-                            <?php $id = $_GET['id'];?>
-                            <input type="hidden" name="id" value="<?php echo $id ?>">
+                            <?php 
+                            // session_start();
+
+                            $id = $_GET['id'];
+                            $_SESSION['id'] = $_GET['id'];
+                            
+                            ?>
+                            <input type="hidden" name="id" value="<?php echo $_SESSION['id']; ?>">
                             
                             <div class="">
                                 <label class="" for="">New Password *</label>

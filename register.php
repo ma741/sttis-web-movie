@@ -97,46 +97,46 @@
 
                   <div class="">
                      <label class="" for="">Foto Profile *</label>
-                     <input type="file" name="foto" class="form-control">
+                     <input type="file" name="foto" class="form-control" required="required">
                   </div>
 
 
 
                   <div class="form-group">
                      <label>Full Name *</label>
-                     <input type="text" name="fullname" placeholder="full name" class="form-control">
+                     <input type="text" name="fullname" placeholder="full name" class="form-control" required="required">
                   </div>
 
                   <div class="form-row">
                      <div class="col-md-6">
-                        <label>Username *</label>
-                        <input type="text" name="username" placeholder="username" class="form-control" />
+                        <label for="username">Username *</label>
+                        <input type="text" name="username" id="username" placeholder="username" class="form-control" required="required">
                      </div>
                      <div class="col-md-6">
                         <label>Date Of Birth *</label>
-                        <input type="date" name="date_of_birth" placeholder="date of birth" class="form-control" />
+                        <input type="date" name="date_of_birth" placeholder="date of birth" class="form-control" required="required">
                      </div>
                   </div>
 
                   <div class="form-row">
                      <div class="col-md-6">
                         <label>Email *</label>
-                        <input type="email" name="email" class="form-control" placeholder="Enter Email Address" />
+                        <input type="email" name="email" class="form-control" placeholder="Enter Email Address" required="required">
                      </div>
                      <div class="col-md-6">
                         <label>Phone *</label>
-                        <input type="text" name="phone" class="form-control" placeholder="phone " />
+                        <input type="text" name="phone" class="form-control" placeholder="phone " required="required">
                      </div>
                   </div>
 
                   <div class="form-row">
                      <div class="col-md-6">
                         <label for="">Password *</label>
-                        <input type="password" name="password" class="form-control" placeholder="Enter password">
+                        <input type="password" name="password" class="form-control" placeholder="Enter password" required="required">
                      </div>
                      <div class="col-md-6">
                         <label>Account Status *</label>
-                        <select name="account_status" class="form-control">
+                        <select name="account_status" class="form-control" required="required">
                            <option value="">- pilih -</option>
                            <option value="Mahasiswa">Mahasiswa</option>
                            <option value="Umum">Umum</option>
@@ -150,11 +150,11 @@
                   <div class="form-row">
                      <div class="col-md-6">
                         <label for="">Address *</label>
-                        <textarea name="address" class="form-control border-form-control"></textarea>
+                        <textarea name="address" class="form-control border-form-control" required="required"></textarea>
                      </div>
                      <div class="col-md-6">
                         <label for="">Role name *</label>
-                        <select name="role_name" class="form-control">
+                        <select name="role_name" class="form-control" required="required">
                            <option value="">- pilih -</option>
                            <option value="Viewer">Viewer</option>
                            <option value="Uploader">Uploader</option>

@@ -1,11 +1,11 @@
 <?php
-
+session_start();
 include "../config.php";
 
 $id = $_POST['id'];
 $np = $_POST['np'];
 $c_np = $_POST['c_np'];
-
+$id_session = $_POST['id'];
 
 
 
@@ -21,15 +21,13 @@ $id = validate($_POST['id']);
 $np = validate($_POST['np']);
 $c_np = validate($_POST['c_np']);
 
-echo "$id <br>";
-echo "$np <br>";
-echo "$c_np <br>";
+
 
 
 
 if ($np !== $c_np) {
-    echo "<script> alert('Konfirmasi password tidak cocok !'); window.location = '../change_password.php?id'; </script>";
-    exit();
+    echo "<script> alert('Konfirmasi password tidak cocok !'); window.location = '../change_password.php?id=$id_session'; </script>";
+
 } else {
     // hashing the password
     $np = md5($np);
@@ -52,8 +50,7 @@ if ($np !== $c_np) {
         exit();
     } else {
 
-        echo "<script> alert('Incorrect password !'); window.location = '../change_password.php?id=$id'; </script>";
-        
+        echo "<script> alert('Incorrect password !'); window.location = '../change_password.php?id=$id_session'; </script>";
         exit();
     }
 }

@@ -5,23 +5,16 @@ session_start();
 
 date_default_timezone_set("Asia/Jakarta");
 
-$email = $_SESSION['email'];
+$email = $_POST['email'];
 $cast = $_POST['cast'];
 $title = $_POST['title'];
 $gendre = $_POST['gendre'];
-$visibilitas = $_POST['visibilitas'];
+$visibilitas = $_POST['visibility'];
 $about = $_POST['about'];
 
 $created_date = date('Y-m-d');
 
 
-// echo "$email <br>";
-// echo "$img <br>";
-// echo "$video <br>";
-// echo "$title <br>";
-// echo "$gendre <br>";
-// echo "$visibilitas <br>";
-// echo $about;
 
 // img
 // ekstensi file yg boleh di upload
@@ -34,7 +27,7 @@ $ekstensi = strtolower(end($x));
 $errorImg = $_FILES['img']['error'];
 
 
-// Video
+// // Video
 $ekstensiVideo = array("mp4", 'webm', 'mkv', 'flv');
 $namaVideo = $_FILES['video']['name'];
 $tmpVideo = $_FILES['video']['tmp_name'];
@@ -75,15 +68,10 @@ if (in_array($ekstensi, $ekstensi_diperbolehkan) === true) {
         $namaFileBaru = uniqid();
         $namaFileBaru .= '.';
         $namaFileBaru .= $ekstensi;
-
         move_uploaded_file($tmpImg, 'files/' . $namaFileBaru);
 
-        // simpan data ke dalam database
-        // $simpan = mysqli_query($conn, "INSERT INTO video_upload VALUES('','$namaFileBaru','','','','','','','')");
 
         // VIDEO
-
-
         // cek jika ukurannya terlalu besar
         if ($ukuranVideo > 1000000000) {
             echo "<script>
@@ -98,8 +86,17 @@ if (in_array($ekstensi, $ekstensi_diperbolehkan) === true) {
             $new_video_name = uniqid("video-", true) . '.' . $video_ex_lc;
 
             $video_upload_path = 'files/' . $new_video_name;
-
             move_uploaded_file($tmpVideo, $video_upload_path);
+
+
+            // echo "$email <br>";
+            // echo "$title <br>";
+            // echo "$gendre <br>";
+            // echo "$visibilitas <br>";
+            // echo "$about <br>";
+            // echo "$created_date<br>";
+            // echo "$namaFileBaru<br>";
+            // echo "$new_video_name<br>";
 
             // id	url_img	url_video	title	about	date	gendre	visibility	user_uploader	
             $simpan = mysqli_query($conn, "INSERT INTO video_upload VALUES('','$namaFileBaru','$new_video_name','$cast','$title','$about','$created_date','$gendre','$visibilitas','$email')");
@@ -113,7 +110,7 @@ if (in_array($ekstensi, $ekstensi_diperbolehkan) === true) {
             } else {
                 echo "<script>
                     alert('Gagal mengupload file');
-                    document.location='upload.php';
+                    // document.location='upload.php';
                 </script>";
             }
         } else {

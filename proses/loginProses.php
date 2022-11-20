@@ -19,8 +19,8 @@ if (mysqli_num_rows($query) == 0) {
 } else {
 
     $users = mysqli_fetch_assoc($query);
-    // echo $users['username'];
-    $username = $users['username'];
+    // echo $users['id'];
+    $id = $users['id'];
 
 
     if ($users['is_verified'] == 1) {
@@ -32,15 +32,15 @@ if (mysqli_num_rows($query) == 0) {
         // var_dump($role_name);
 
         if($role_name == 'Viewer'){
-            $_SESSION['berhasil'] = $username;
+            $_SESSION['id'] = $id;
             header('location:../users/viewer/index.php');
 
         }else if($role_name == 'Uploader'){
-            $_SESSION['berhasil'] = $username;
+            $_SESSION['id'] = $id;
             header('location:../users/uploader/index.php');
 
         }else if($role_name == 'Admin'){
-            $_SESSION['berhasil'] = $username;
+            $_SESSION['id'] = $id;
             header('location:../users/admin/index.php');
         }
 

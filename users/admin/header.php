@@ -2,13 +2,13 @@
 include "../../config.php";
 session_start();
 
-if ($_SESSION['berhasil'] == "") {
+if ($_SESSION['id'] == "") {
   header("location:../../login.php?pesan=no_login");
 }
 
-$username = $_SESSION['berhasil'];
+$id = $_SESSION['id'];
 
-$query = mysqli_query($conn,"SELECT * FROM users WHERE username='$username'");
+$query = mysqli_query($conn,"SELECT * FROM users WHERE id='$id'");
 $user = mysqli_fetch_assoc($query);
 
 ?>
@@ -32,9 +32,19 @@ $user = mysqli_fetch_assoc($query);
     <link href="../../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <!-- Custom styles for this template-->
     <link href="../../assets/css/osahan.css" rel="stylesheet">
+    
     <!-- Owl Carousel -->
     <link rel="stylesheet" href="../../assets/vendor/owl-carousel/owl.carousel.css">
     <link rel="stylesheet" href="../../assets/vendor/owl-carousel/owl.theme.css">
+
+	<script src="../../assets/vendor/bootstrap/js/jquery.js"></script>
+	<script src="../../assets/vendor/bootstrap/js/bootstrap.js"></script>
+
+	<link rel="stylesheet" href="../../assets/vendor/DataTables/DataTables/css/dataTables.bootstrap.css">
+	<script src="../../assets/vendor/DataTables/datatables.min.js"></script>
+
+
+
   </head>
 
 
@@ -42,7 +52,7 @@ $user = mysqli_fetch_assoc($query);
 
   <body id="page-top">
 
-    <nav class="warna-navbar navbar navbar-expand navbar-dark  static-top osahan-nav sticky-top">
+    <nav class="warna-navbar navbar navbar-expand navbar-dark  static-top osahan-nav sticky-top fixed-top">
 
       &nbsp;&nbsp;
       <button class="btn btn-link btn-sm text-secondary order-1 order-sm-0" id="sidebarToggle">
@@ -93,7 +103,7 @@ $user = mysqli_fetch_assoc($query);
         <li class="nav-item dropdown no-arrow osahan-right-navbar-user">
           <a class="nav-link dropdown-toggle user-dropdown-link" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <img alt="Avatar" src="../../assets/file/<?= $user['photo']; ?>" />
-            <?php echo $_SESSION['berhasil'];  ?>
+            <?php echo $user['username'];  ?>
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
             <a class="dropdown-item" href="account.php"><i class="fas fa-fw fa-user-circle"></i> &nbsp; My Account</a>
@@ -124,7 +134,7 @@ $user = mysqli_fetch_assoc($query);
                <div class="dropdown-menu">
                   <h6 class="dropdown-header">Users:</h6>
                   <a class="dropdown-item" href="category.php">Category</a>
-                  <a class="dropdown-item" href="register.html">Register</a>
+                  <a class="dropdown-item" href="analitycs.php">Analitycs</a>
                   <a class="dropdown-item" href="forgot-password.html">Forgot Password</a>
                   <div class="dropdown-divider"></div>
                   <h6 class="dropdown-header">Other Pages:</h6>
@@ -169,4 +179,13 @@ $user = mysqli_fetch_assoc($query);
 
 
       </ul>
+
+
+
+
+
+
+
+
+
 
